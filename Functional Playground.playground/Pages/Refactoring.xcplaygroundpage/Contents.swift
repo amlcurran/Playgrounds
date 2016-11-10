@@ -5,12 +5,12 @@ let foods = [Food(name: "Turkey", weight: "2kg"), Food(name: "Beans", weight: "5
 
 //:### Task 1: map
 //: Refactor this code to use `map`
+private func extractingName(food: Food) -> String {
+	return food.name
+}
+
 func getAllNames(from foods: [Food]) -> [String] {
-	var names: [String] = []
-	for food in foods {
-		names.append(food.name)
-	}
-	return names
+	return foods.map(extractingName)
 }
 
 let names = getAllNames(from: foods)
@@ -19,25 +19,26 @@ printResult(expected: ["Turkey", "Beans", "Pasta", "Turkey"], actual: names)
 
 //:### Task 2: filter
 //: Refactor this code to use `filter` to get the first item with the `name` input
-func getFood(from foods: [Food], withName name: String) -> Food? {
-	for food in foods {
-		if (food.name == name) {
-			return food
-		}
+private func food(named name: String) -> ((Food) -> Bool) {
+	return { food in
+		return food.name == name
 	}
-	return nil
+}
+
+func getFood(from foods: [Food], withName name: String) -> Food? {
+	return foods.filter(food(named: name)).first
 }
 
 printResult(expected: Food(name: "Turkey", weight: "2kg"), actual: getFood(from: foods, withName: "Turkey"))
 
 //:### Task 3: reduce 
 //: Refactor this code to add all the numbers together using `reduce`
+private func add(_ first: Int, _ second: Int) -> Int {
+	return first + second
+}
+
 func sum(_ ints: [Int]) -> Int {
-	var sum = 0
-	for int in ints {
-		sum += int
-	}
-	return sum
+	return ints.reduce(0, add) // you can even do ints.reduce(0, +), but I wouldn't recommend it
 }
 
 printResult(expected: 21, actual: sum([1, 4, -2, 18, 0]))

@@ -10,8 +10,12 @@ let foodJson = [ ["name": "Apple", "weight" : "500g"],
                      ["name": "Potato", "weight": "100g"],
                      ["weight": "40g"] ]
 
-let asFood = { (dictionary: [String: String]) in
-	return Food(name: "change this", weight: "and this")
+let asFood = { (dictionary: [String: String]) -> Food? in
+	guard let name = dictionary["name"],
+		let weight = dictionary["weight"] else {
+			return nil
+	}
+	return Food(name: name, weight: weight)
 }
 let food = foodJson.flatMap(asFood)
 

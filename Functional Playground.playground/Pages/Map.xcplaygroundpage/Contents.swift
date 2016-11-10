@@ -8,7 +8,7 @@ let foodJson = [ ["name": "Apple", "weight" : "500g"],
 				 ["name": "Blueberries", "weight": "40g"] ]
 
 let asFood = { (dictionary: [String: String]) in
-	return Food(name: "change this", weight: "and this")
+	return Food(name: dictionary["name"]!, weight: dictionary["weight"]!)
 }
 
 

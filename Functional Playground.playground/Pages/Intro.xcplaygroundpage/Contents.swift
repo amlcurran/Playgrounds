@@ -9,7 +9,7 @@ import Foundation
 let numbers = [1, 4, 2, 5, 0]
 
 let mappedNumbers = numbers.map({ number in
-	return "" // change this!
+	return String(repeating: "a", count: number)
 })
 
 printResult(expected: ["a", "aaaa", "aa", "aaaaa", ""], actual: mappedNumbers)
@@ -20,7 +20,7 @@ printResult(expected: ["a", "aaaa", "aa", "aaaaa", ""], actual: mappedNumbers)
 let strings = ["Bier", "Burger", "Katze", "Deutsch", "", "Hallo", "Bayern" ]
 
 let bWords = strings.filter({ string in
-	return false // change this!
+	return string.characters.first == "B"
 })
 
 printResult(expected: ["Bier", "Burger", "Bayern"], actual: bWords)
@@ -29,7 +29,7 @@ printResult(expected: ["Bier", "Burger", "Bayern"], actual: bWords)
 //: Use reduce to return true when all items in the array are 0, and false otherwise.
 
 let booleanAND: ((Bool, Int) -> Bool) = { previous, int in
-	return false // change this!
+	return previous && int == 0
 }
 let firstResult = [0, 0, 0, 0].reduce(true, booleanAND)
 let secondResult = [0, 1, 0, 0].reduce(true, booleanAND)
@@ -43,7 +43,7 @@ printResult(expected: false, actual: secondResult)
 let array = [ "hello", "how", 12, "are", "you", false ] as [Any]
 
 let stringsOnly = array.flatMap({ item in
-	return "" // change this!
+	return item as? String
 })
 
 printResult(expected: ["hello", "how", "are", "you" ], actual: stringsOnly)
