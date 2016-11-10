@@ -2,8 +2,8 @@ import Foundation
 
 public struct Food: Equatable {
 
-	private let name: String
-	private let weight: String
+	public let name: String
+	public let weight: String
 
 	public init(name: String, weight: String) {
 		self.name = name

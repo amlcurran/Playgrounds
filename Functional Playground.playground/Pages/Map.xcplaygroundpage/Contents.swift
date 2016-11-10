@@ -1,10 +1,7 @@
 //: [Previous](@previous)
-
 import Foundation
-
 //:#### Map to parse items.
 //: Here's an example which is probably `map`s best usage. Create an array of `Food` items, from the name and weight of each item in the array. Don't worry about using implicitly unwrapped optionals, as you'll need them
-
 let foodJson = [ ["name": "Apple", "weight" : "500g"],
                  ["name": "Turkey", "weight" : "2kg"],
 				 ["name": "Potato", "weight": "100g"],
