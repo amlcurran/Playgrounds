@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		99393F62F6C38589D342CE1D /* Pods_RxSwift_sessions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D5DE8DE43F119FD6D80112 /* Pods_RxSwift_sessions.framework */; };
 		D7DB9E4F9E6A69554999F7F0 /* Pods_RxSwift_sessionsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782DA0699283C06999716A6B /* Pods_RxSwift_sessionsTests.framework */; };
+		FA790DEE1DE6F8B700238509 /* ObservableCreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA16458D019FF26851C96C /* ObservableCreationTests.swift */; };
 		FAAD1BE61DDB5A5A0038D3D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD1BE51DDB5A5A0038D3D9 /* AppDelegate.swift */; };
 		FAAD1BE81DDB5A5A0038D3D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD1BE71DDB5A5A0038D3D9 /* ViewController.swift */; };
 		FAAD1BEB1DDB5A5A0038D3D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAD1BE91DDB5A5A0038D3D9 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2DBA16458D019FF26851C96C /* ObservableCreationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableCreationTests.swift; sourceTree = "<group>"; };
 		3403A951358F6C6970C1DBD3 /* Pods-RxSwift sessionsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift sessionsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift sessionsTests/Pods-RxSwift sessionsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		38D5DE8DE43F119FD6D80112 /* Pods_RxSwift_sessions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_sessions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4195C81B682CAD830BB86792 /* Pods-RxSwift sessions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift sessions.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift sessions/Pods-RxSwift sessions.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				FAAD1BFA1DDB5A5A0038D3D9 /* BasicOperationTests.swift */,
 				FAAD1BFC1DDB5A5A0038D3D9 /* Info.plist */,
+				2DBA16458D019FF26851C96C /* ObservableCreationTests.swift */,
 			);
 			path = "RxSwift sessionsTests";
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAD1BFB1DDB5A5A0038D3D9 /* BasicOperationTests.swift in Sources */,
+				FA790DEE1DE6F8B700238509 /* ObservableCreationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
