@@ -14,7 +14,7 @@
 		FAAD1BEB1DDB5A5A0038D3D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAD1BE91DDB5A5A0038D3D9 /* Main.storyboard */; };
 		FAAD1BED1DDB5A5A0038D3D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAD1BEC1DDB5A5A0038D3D9 /* Assets.xcassets */; };
 		FAAD1BF01DDB5A5A0038D3D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAD1BEE1DDB5A5A0038D3D9 /* LaunchScreen.storyboard */; };
-		FAAD1BFB1DDB5A5A0038D3D9 /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD1BFA1DDB5A5A0038D3D9 /* MapTests.swift */; };
+		FAAD1BFB1DDB5A5A0038D3D9 /* BasicOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD1BFA1DDB5A5A0038D3D9 /* BasicOperationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,7 @@
 		FAAD1BEF1DDB5A5A0038D3D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAAD1BF11DDB5A5A0038D3D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAAD1BF61DDB5A5A0038D3D9 /* RxSwift sessionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxSwift sessionsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAAD1BFA1DDB5A5A0038D3D9 /* MapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTests.swift; sourceTree = "<group>"; };
+		FAAD1BFA1DDB5A5A0038D3D9 /* BasicOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicOperationTests.swift; sourceTree = "<group>"; };
 		FAAD1BFC1DDB5A5A0038D3D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +122,7 @@
 		FAAD1BF91DDB5A5A0038D3D9 /* RxSwift sessionsTests */ = {
 			isa = PBXGroup;
 			children = (
-				FAAD1BFA1DDB5A5A0038D3D9 /* MapTests.swift */,
+				FAAD1BFA1DDB5A5A0038D3D9 /* BasicOperationTests.swift */,
 				FAAD1BFC1DDB5A5A0038D3D9 /* Info.plist */,
 			);
 			path = "RxSwift sessionsTests";
@@ -341,7 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAAD1BFB1DDB5A5A0038D3D9 /* MapTests.swift in Sources */,
+				FAAD1BFB1DDB5A5A0038D3D9 /* BasicOperationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

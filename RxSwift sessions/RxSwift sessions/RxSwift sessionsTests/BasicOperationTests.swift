@@ -2,7 +2,7 @@ import XCTest
 import RxSwift
 @testable import RxSwift_sessions
 
-class SimpleRxTests: XCTestCase {
+class BasicOperationTests: XCTestCase {
     
     func testMap() {
 		var results: [Int] = []
