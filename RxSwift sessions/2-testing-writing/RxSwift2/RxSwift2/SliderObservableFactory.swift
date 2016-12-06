@@ -14,7 +14,7 @@ class SliderObservableFactory: NSObject {
 
 	var observable: Observable<Float> {
 		return subject.asObservable()
-			.distinctUntilChanged()
+			.distinctUntilChanged() // this is useful - it will only emit items if they are different from the one before
 	}
 
 	@objc private func sliderDidChange(_ slider: UISlider) {
