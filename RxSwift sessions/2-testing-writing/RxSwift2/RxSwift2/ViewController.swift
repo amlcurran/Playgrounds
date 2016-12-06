@@ -23,9 +23,10 @@ class ViewController: UIViewController {
 		let slider = UISlider()
 		slider.minimumValue = 1
 		slider.maximumValue = 10
-		slider.isContinuous = false
+		slider.isContinuous = true
 		layout(slider, below: button)
 
+		// task one, disable the button if there are fewer than 8 characters
         observableFactory = TextFieldObservableFactory(textField: textField)
         observableFactory.observable
             .subscribe(onNext: { string in print(string) })

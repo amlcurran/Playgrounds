@@ -14,10 +14,12 @@ class SliderObservableFactory: NSObject {
 
 	var observable: Observable<Float> {
 		return subject.asObservable()
+			.distinctUntilChanged()
 	}
 
 	@objc private func sliderDidChange(_ slider: UISlider) {
-		subject.on(.next(slider.value))
+		subject.on(.next(round(slider.value)))
+		slider.value = round(slider.value)
 	}
 
 }
