@@ -10,6 +10,7 @@
 		2DBA1CE53CD7CBF2A6203183 /* TextFieldObservableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA19DC7D31F43B22345337 /* TextFieldObservableFactory.swift */; };
 		986527D177489CB8B23ABEF4 /* Pods_RxSwift2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5935741F5F79615E1F59972 /* Pods_RxSwift2Tests.framework */; };
 		DA87D78353008D99D80886D8 /* Pods_RxSwift2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72EB2E97DD19129AF743CAD3 /* Pods_RxSwift2.framework */; };
+		FA18DEFE1DF6C57E00A8A4B6 /* SliderObservableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18DEFD1DF6C57E00A8A4B6 /* SliderObservableFactory.swift */; };
 		FA2A8C9F1DF6AB8400B170BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A8C9E1DF6AB8400B170BD /* AppDelegate.swift */; };
 		FA2A8CA11DF6AB8400B170BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A8CA01DF6AB8400B170BD /* ViewController.swift */; };
 		FA2A8CA41DF6AB8400B170BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2A8CA21DF6AB8400B170BD /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		7F53EFD7DDBA28CCFF2D334E /* Pods-RxSwift2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift2/Pods-RxSwift2.debug.xcconfig"; sourceTree = "<group>"; };
 		D5935741F5F79615E1F59972 /* Pods_RxSwift2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEFF2CA1DE20262B4D88BD3F /* Pods-RxSwift2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift2Tests/Pods-RxSwift2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FA18DEFD1DF6C57E00A8A4B6 /* SliderObservableFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderObservableFactory.swift; sourceTree = "<group>"; };
 		FA2A8C9B1DF6AB8400B170BD /* RxSwift2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwift2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2A8C9E1DF6AB8400B170BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA2A8CA01DF6AB8400B170BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				FA2A8CA71DF6AB8400B170BD /* LaunchScreen.storyboard */,
 				FA2A8CAA1DF6AB8400B170BD /* Info.plist */,
 				2DBA19DC7D31F43B22345337 /* TextFieldObservableFactory.swift */,
+				FA18DEFD1DF6C57E00A8A4B6 /* SliderObservableFactory.swift */,
 			);
 			path = RxSwift2;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA18DEFE1DF6C57E00A8A4B6 /* SliderObservableFactory.swift in Sources */,
 				FA2A8CA11DF6AB8400B170BD /* ViewController.swift in Sources */,
 				FA2A8C9F1DF6AB8400B170BD /* AppDelegate.swift in Sources */,
 				2DBA1CE53CD7CBF2A6203183 /* TextFieldObservableFactory.swift in Sources */,
