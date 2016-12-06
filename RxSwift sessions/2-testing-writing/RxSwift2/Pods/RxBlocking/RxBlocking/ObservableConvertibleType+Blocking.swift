@@ -16,7 +16,7 @@ extension ObservableConvertibleType {
     ///
     /// - parameter timeout: Maximal time interval BlockingObservable can block without throwing `RxError.timeout`.
     /// - returns: `BlockingObservable` version of `self`
-    public func toBlocking(timeout: RxTimeInterval? = nil) -> BlockingObservable<E> {
+    public func toBlocking(_ timeout: RxTimeInterval? = nil) -> BlockingObservable<E> {
         return BlockingObservable(timeout: timeout, source: self.asObservable())
     }
 }

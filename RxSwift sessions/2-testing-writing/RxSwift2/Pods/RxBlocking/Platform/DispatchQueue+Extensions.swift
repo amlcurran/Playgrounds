@@ -10,7 +10,7 @@ import Foundation
 import Dispatch
 
 extension DispatchQueue {
-    private static var token: DispatchSpecificKey<()> = {
+    fileprivate static var token: DispatchSpecificKey<()> = {
         let key = DispatchSpecificKey<()>()
         DispatchQueue.main.setSpecific(key: key, value: ())
         return key

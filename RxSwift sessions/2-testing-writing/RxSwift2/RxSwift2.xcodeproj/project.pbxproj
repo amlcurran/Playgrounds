@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DBA1CE53CD7CBF2A6203183 /* TextFieldObservableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA19DC7D31F43B22345337 /* TextFieldObservableFactory.swift */; };
 		986527D177489CB8B23ABEF4 /* Pods_RxSwift2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5935741F5F79615E1F59972 /* Pods_RxSwift2Tests.framework */; };
 		DA87D78353008D99D80886D8 /* Pods_RxSwift2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72EB2E97DD19129AF743CAD3 /* Pods_RxSwift2.framework */; };
 		FA2A8C9F1DF6AB8400B170BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2A8C9E1DF6AB8400B170BD /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		0426692B95DC69D9E02682C7 /* Pods-RxSwift2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift2.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift2/Pods-RxSwift2.release.xcconfig"; sourceTree = "<group>"; };
+		2DBA19DC7D31F43B22345337 /* TextFieldObservableFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldObservableFactory.swift; sourceTree = "<group>"; };
 		6BB195B1F493C04E53ED91E2 /* Pods-RxSwift2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift2Tests/Pods-RxSwift2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		72EB2E97DD19129AF743CAD3 /* Pods_RxSwift2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F53EFD7DDBA28CCFF2D334E /* Pods-RxSwift2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift2/Pods-RxSwift2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				FA2A8CA51DF6AB8400B170BD /* Assets.xcassets */,
 				FA2A8CA71DF6AB8400B170BD /* LaunchScreen.storyboard */,
 				FA2A8CAA1DF6AB8400B170BD /* Info.plist */,
+				2DBA19DC7D31F43B22345337 /* TextFieldObservableFactory.swift */,
 			);
 			path = RxSwift2;
 			sourceTree = "<group>";
@@ -184,10 +187,12 @@
 				TargetAttributes = {
 					FA2A8C9A1DF6AB8400B170BD = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					FA2A8CAE1DF6AB8400B170BD = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FA2A8C9A1DF6AB8400B170BD;
 					};
@@ -332,6 +337,7 @@
 			files = (
 				FA2A8CA11DF6AB8400B170BD /* ViewController.swift in Sources */,
 				FA2A8C9F1DF6AB8400B170BD /* AppDelegate.swift in Sources */,
+				2DBA1CE53CD7CBF2A6203183 /* TextFieldObservableFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +547,7 @@
 				FA2A8CBA1DF6AB8400B170BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA2A8CBB1DF6AB8400B170BD /* Build configuration list for PBXNativeTarget "RxSwift2Tests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +556,7 @@
 				FA2A8CBD1DF6AB8400B170BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

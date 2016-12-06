@@ -7,33 +7,54 @@
 		<key>Pods-RxSwift2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false />
+			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
 		<key>Pods-RxSwift2Tests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false />
+			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
 		<key>RxBlocking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false />
+			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
 		<key>RxSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false />
+			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict />
+	<dict>
+		<key>367E811E91819E54C854B32F1BAB57FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>75E61DE78B1EDAF6CFF52AE1ABAD3046</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D67DFA8E274933A2188F76CD2D530833</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E32029665366141B15026B00E7CD1D69</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

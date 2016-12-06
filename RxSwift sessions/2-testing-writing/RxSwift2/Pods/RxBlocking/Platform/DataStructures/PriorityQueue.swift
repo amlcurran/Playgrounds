@@ -9,8 +9,8 @@
 import Foundation
 
 struct PriorityQueue<Element> {
-    private let _hasHigherPriority: (Element, Element) -> Bool
-    private let _isEqual: (Element, Element) -> Bool
+    fileprivate let _hasHigherPriority: (Element, Element) -> Bool
+    fileprivate let _isEqual: (Element, Element) -> Bool
 
     fileprivate var _elements = [Element]()
 
@@ -51,7 +51,7 @@ struct PriorityQueue<Element> {
         }
     }
 
-    private mutating func removeAt(_ index: Int) {
+    fileprivate mutating func removeAt(_ index: Int) {
         let removingLast = index == _elements.count - 1
         if !removingLast {
             swap(&_elements[index], &_elements[_elements.count - 1])
@@ -65,7 +65,7 @@ struct PriorityQueue<Element> {
         }
     }
 
-    private mutating func bubbleToHigherPriority(_ initialUnbalancedIndex: Int) {
+    fileprivate mutating func bubbleToHigherPriority(_ initialUnbalancedIndex: Int) {
         precondition(initialUnbalancedIndex >= 0)
         precondition(initialUnbalancedIndex < _elements.count)
 
@@ -80,7 +80,7 @@ struct PriorityQueue<Element> {
         }
     }
 
-    private mutating func bubbleToLowerPriority(_ initialUnbalancedIndex: Int) {
+    fileprivate mutating func bubbleToLowerPriority(_ initialUnbalancedIndex: Int) {
         precondition(initialUnbalancedIndex >= 0)
         precondition(initialUnbalancedIndex < _elements.count)
 

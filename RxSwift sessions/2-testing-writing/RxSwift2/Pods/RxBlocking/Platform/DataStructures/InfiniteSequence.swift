@@ -13,7 +13,7 @@ struct InfiniteSequence<E> : Sequence {
     typealias Element = E
     typealias Iterator = AnyIterator<E>
     
-    private let _repeatedValue: E
+    fileprivate let _repeatedValue: E
     
     init(repeatedValue: E) {
         _repeatedValue = repeatedValue

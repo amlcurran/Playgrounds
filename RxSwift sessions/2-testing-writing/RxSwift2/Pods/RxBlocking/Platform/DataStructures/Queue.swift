@@ -20,12 +20,12 @@ struct Queue<T>: Sequence {
     /// Type of generator.
     typealias Generator = AnyIterator<T>
 
-    private let _resizeFactor = 2
+    fileprivate let _resizeFactor = 2
     
-    private var _storage: ContiguousArray<T?>
-    private var _count = 0
-    private var _pushNextIndex = 0
-    private let _initialCapacity: Int
+    fileprivate var _storage: ContiguousArray<T?>
+    fileprivate var _count = 0
+    fileprivate var _pushNextIndex = 0
+    fileprivate let _initialCapacity: Int
 
     /**
     Creates new queue.
@@ -38,7 +38,7 @@ struct Queue<T>: Sequence {
         _storage = ContiguousArray<T?>(repeating: nil, count: capacity)
     }
     
-    private var dequeueIndex: Int {
+    fileprivate var dequeueIndex: Int {
         let index = _pushNextIndex - count
         return index < 0 ? index + _storage.count : index
     }
@@ -60,7 +60,7 @@ struct Queue<T>: Sequence {
         return _storage[dequeueIndex]!
     }
     
-    mutating private func resizeTo(_ size: Int) {
+    mutating fileprivate func resizeTo(_ size: Int) {
         var newStorage = ContiguousArray<T?>(repeating: nil, count: size)
         
         let count = _count
@@ -98,7 +98,7 @@ struct Queue<T>: Sequence {
         }
     }
     
-    private mutating func dequeueElementOnly() -> T {
+    fileprivate mutating func dequeueElementOnly() -> T {
         precondition(count > 0)
         
         let index = dequeueIndex
