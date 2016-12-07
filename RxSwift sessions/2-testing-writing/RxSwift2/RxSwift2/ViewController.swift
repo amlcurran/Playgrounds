@@ -14,11 +14,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 		edgesForExtendedLayout = []
 
-		textField.text = "Hello"
 		layout(textField)
 
 		button.setTitle("Button", for: .normal)
 		button.setTitleColor(.red, for: .normal)
+		button.setTitleColor(.gray, for: .disabled)
+		button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
 		layout(button, below: textField)
 
 		slider.minimumValue = 1
@@ -41,6 +42,9 @@ class ViewController: UIViewController {
 		sliderObservableFactory.observable
 				.subscribe(onNext: { float in print(float) })
 				.addDisposableTo(disposeBag)
+
+		textField.text = "Hello"
+		slider.value = 8
 	}
 
 	override func viewWillDisappear(_ animated: Bool) {
@@ -48,6 +52,9 @@ class ViewController: UIViewController {
 		disposeBag = DisposeBag()
 	}
 
+	@objc private func buttonTapped() {
+		print("Tapped button!")
+	}
 
 	private func layout(_ textField: UITextField) {
 		view.addSubview(textField)
