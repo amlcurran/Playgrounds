@@ -1,36 +1,46 @@
-//
-//  RxSwift2Tests.swift
-//  RxSwift2Tests
-//
-//  Created by Alex on 06/12/2016.
-//  Copyright © 2016 amlcurran. All rights reserved.
-//
-
 import XCTest
+import RxSwift
+import RxBlocking
 @testable import RxSwift2
 
 class RxSwift2Tests: XCTestCase {
+
+	private let disposeBag = DisposeBag()
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+	func testStreamUsingExpectations() {
+		let expecation = expectation(description: "didn't complete")
+		var outputs: [Int] = []
+
+		Observable.of("Hello", "World", "How", "Are", "You")
+			.map(asCharacterCount)
+			.filter(outUnder4)
+			.subscribe(onNext: { int in
+					outputs.append(int)
+				}, onCompleted: {
+					expecation.fulfill()
+				})
+			.addDisposableTo(disposeBag)
+
+		waitForExpectations(timeout: 0.2, handler: nil)
+		XCTAssertEqual(outputs, [5, 5])
+	}
+
+	func testStreamUsingRxBlocking() throws {
+		let outputs = try Observable.of("Hello", "World", "How", "Are", "You")
+			.map(asCharacterCount)
+			.filter(outUnder4)
+			.toBlocking()
+			.toArray()
+
+		XCTAssertEqual(outputs, [5, 5])
+	}
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+}
+
+fileprivate func asCharacterCount(string: String) -> Int {
+	return string.characters.count
+}
+
+fileprivate func outUnder4(int: Int) -> Bool {
+	return int > 3
 }

@@ -6,37 +6,48 @@ class ViewController: UIViewController {
     private var observableFactory: TextFieldObservableFactory!
 	private var sliderObservableFactory: SliderObservableFactory!
     private var disposeBag = DisposeBag()
+	private let textField = UITextField()
+	private let button = UIButton()
+	private let slider = UISlider()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		edgesForExtendedLayout = []
 
-        let textField = UITextField()
 		textField.text = "Hello"
 		layout(textField)
 
-		let button = UIButton()
 		button.setTitle("Button", for: .normal)
 		button.setTitleColor(.red, for: .normal)
 		layout(button, below: textField)
 
-		let slider = UISlider()
 		slider.minimumValue = 1
 		slider.maximumValue = 10
 		slider.isContinuous = true
 		layout(slider, below: button)
+    }
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		disposeBag = DisposeBag()
 
 		// task one, disable the button if there are fewer than 8 characters
-        observableFactory = TextFieldObservableFactory(textField: textField)
-        observableFactory.observable
-            .subscribe(onNext: { string in print(string) })
-			.addDisposableTo(disposeBag)
+		observableFactory = TextFieldObservableFactory(textField: textField)
+		observableFactory.observable
+				.subscribe(onNext: { string in print(string) })
+				.addDisposableTo(disposeBag)
 
 		sliderObservableFactory = SliderObservableFactory(slider: slider)
 		sliderObservableFactory.observable
-			.subscribe(onNext: { float in print(float) })
-			.addDisposableTo(disposeBag)
-    }
+				.subscribe(onNext: { float in print(float) })
+				.addDisposableTo(disposeBag)
+	}
+
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		disposeBag = DisposeBag()
+	}
+
 
 	private func layout(_ textField: UITextField) {
 		view.addSubview(textField)
@@ -64,4 +75,3 @@ class ViewController: UIViewController {
 	}
 
 }
-
