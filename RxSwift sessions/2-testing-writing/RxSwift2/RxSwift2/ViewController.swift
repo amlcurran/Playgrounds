@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 		edgesForExtendedLayout = []
 
+		textField.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
 		layout(textField)
 
 		button.setTitle("Button", for: .normal)
@@ -59,26 +60,18 @@ class ViewController: UIViewController {
 	private func layout(_ textField: UITextField) {
 		view.addSubview(textField)
 		textField.translatesAutoresizingMaskIntoConstraints = false
-		textField.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-		textField.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-		textField.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+		textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+		textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+		textField.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 16).isActive = true
 		textField.heightAnchor.constraint(equalToConstant: 40).isActive = true
 	}
 
-	private func layout(_ button: UIButton, below textField: UIView) {
-		view.addSubview(button)
-		button.translatesAutoresizingMaskIntoConstraints = false
-		button.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-		button.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-		button.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 16).isActive = true
-	}
-
-	private func layout(_ slider: UISlider, below button: UIView) {
-		view.addSubview(slider)
-		slider.translatesAutoresizingMaskIntoConstraints = false
-		slider.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-		slider.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-		slider.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 16).isActive = true
+	private func layout(_ firstView: UIView, below otherView: UIView) {
+		view.addSubview(firstView)
+		firstView.translatesAutoresizingMaskIntoConstraints = false
+		firstView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+		firstView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+		firstView.topAnchor.constraint(equalTo: otherView.bottomAnchor, constant: 16).isActive = true
 	}
 
 }
