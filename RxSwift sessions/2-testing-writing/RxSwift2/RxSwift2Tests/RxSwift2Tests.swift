@@ -34,7 +34,7 @@ class RxSwift2Tests: XCTestCase {
 
 		XCTAssertEqual(outputs, [5, 5])
 	}
-    
+
 }
 
 fileprivate func asCharacterCount(string: String) -> Int {
