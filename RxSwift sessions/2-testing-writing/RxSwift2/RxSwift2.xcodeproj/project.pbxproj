@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2DBA1CE53CD7CBF2A6203183 /* TextFieldObservableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA19DC7D31F43B22345337 /* TextFieldObservableFactory.swift */; };
+		8698C1B91E545E4400E1BBD6 /* RxBlockingExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698C1B81E545E4400E1BBD6 /* RxBlockingExerciseTests.swift */; };
 		986527D177489CB8B23ABEF4 /* Pods_RxSwift2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5935741F5F79615E1F59972 /* Pods_RxSwift2Tests.framework */; };
 		DA87D78353008D99D80886D8 /* Pods_RxSwift2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72EB2E97DD19129AF743CAD3 /* Pods_RxSwift2.framework */; };
 		FA18DEFE1DF6C57E00A8A4B6 /* SliderObservableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18DEFD1DF6C57E00A8A4B6 /* SliderObservableFactory.swift */; };
@@ -36,6 +37,7 @@
 		6BB195B1F493C04E53ED91E2 /* Pods-RxSwift2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift2Tests/Pods-RxSwift2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		72EB2E97DD19129AF743CAD3 /* Pods_RxSwift2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F53EFD7DDBA28CCFF2D334E /* Pods-RxSwift2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift2/Pods-RxSwift2.debug.xcconfig"; sourceTree = "<group>"; };
+		8698C1B81E545E4400E1BBD6 /* RxBlockingExerciseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxBlockingExerciseTests.swift; sourceTree = "<group>"; };
 		D5935741F5F79615E1F59972 /* Pods_RxSwift2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEFF2CA1DE20262B4D88BD3F /* Pods-RxSwift2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift2Tests/Pods-RxSwift2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FA18DEFD1DF6C57E00A8A4B6 /* SliderObservableFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderObservableFactory.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				FA2A8CB31DF6AB8400B170BD /* RxSwift2Tests.swift */,
 				FA2A8CB51DF6AB8400B170BD /* Info.plist */,
 				FA9487F11DF9681E001E5750 /* RxBlockingTests.swift */,
+				8698C1B81E545E4400E1BBD6 /* RxBlockingExerciseTests.swift */,
 			);
 			path = RxSwift2Tests;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8698C1B91E545E4400E1BBD6 /* RxBlockingExerciseTests.swift in Sources */,
 				FA9487F21DF9681E001E5750 /* RxBlockingTests.swift in Sources */,
 				FA2A8CB41DF6AB8400B170BD /* RxSwift2Tests.swift in Sources */,
 			);

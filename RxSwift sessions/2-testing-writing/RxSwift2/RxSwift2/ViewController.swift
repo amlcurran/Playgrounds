@@ -36,7 +36,9 @@ class ViewController: UIViewController {
 		// task one, disable the button if there are fewer than 8 characters
 		observableFactory = TextFieldObservableFactory(textField: textField)
 		observableFactory.observable
-				.subscribe(onNext: { string in print(string) })
+				.subscribe(onNext: { string in
+					print(string)
+				})
 				.addDisposableTo(disposeBag)
 
 		sliderObservableFactory = SliderObservableFactory(slider: slider)
