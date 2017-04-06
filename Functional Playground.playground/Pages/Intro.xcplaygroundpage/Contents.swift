@@ -28,18 +28,6 @@ let bWords = strings.filter({ string in
 printResult(expected: ["Beach", "Bangalore"], actual: bWords)
 
 //:### Task 3:
-//: Use reduce to return **true** when all items in the array are 0, and false otherwise.
-
-let booleanAND: ((Bool, Int) -> Bool) = { (previous: Bool, int: Int) in
-	return false // change this!
-}
-let firstResult = [0, 0, 0, 0].reduce(true, booleanAND)
-let secondResult = [0, 1, 0, 0].reduce(true, booleanAND)
-
-printResult(expected: true, actual: firstResult)
-printResult(expected: false, actual: secondResult)
-
-//:### Task 4:
 //: Use flatMap to get all the values out of this array **but only if they're strings**
 
 let array = [ "hello", "how", 12, "are", "you", false ] as [Any]
