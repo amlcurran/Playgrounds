@@ -25,3 +25,8 @@ public let expectedFoods = [ Food(name: "Apple", weight: "500g"),
                       Food(name: "Turkey", weight: "2kg"),
                       Food(name: "Potato", weight: "100g"),
                       Food(name: "Blueberries", weight: "40g") ]
+
+public let foods = [ Food(name: "Apple", weight: "500g"),
+                             Food(name: "Turkey", weight: "2kg"),
+                             Food(name: "Potato", weight: "100g"),
+                             Food(name: "Blueberries", weight: "40g") ]

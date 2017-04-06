@@ -4,31 +4,33 @@ import Foundation
 
 //: Use the `printResult` methods to make sure what you're doing is correct, you can see the result of whether your solution is correct by looking in the grey bar to the right
 //:### Task 1:
-//: Use map to make an array where each element is an "a" string with the length of the input element - e.g. 3 should return "aaa". (Hint: String has a initialiser that will make this very easy for you!)
+//: Use map to output a list of each Food's name
 
-let numbers = [1, 4, 2, 5, 0]
+public let foods = [ Food(name: "Apple", weight: "500g"),
+                     Food(name: "Chicken", weight: "2kg"),
+                     Food(name: "Potato", weight: "100g") ]
 
-let mappedNumbers = numbers.map({ number in
+let names = foods.map({ food in
 	return "" // change this!
 })
 
-printResult(expected: ["a", "aaaa", "aa", "aaaaa", ""], actual: mappedNumbers)
+printResult(expected: ["Apple", "Chicken", "Potato"], actual: names)
 
 //:### Task 2: 
-//: Use filter to create an array where the only elements are words starting with the letter B. Be careful of zero-length strings! Remember, filter has to return true if you want that element to be included in the result.
+//: Use filter to create an array where the only elements are words starting with the letter B. Be careful of zero-length strings! Remember, filter has to return **true** if you want that element to be included in the result.
 
-let strings = ["Bier", "Burger", "Katze", "Deutsch", "", "Hallo", "Bayern" ]
+let strings = ["Tea", "Beach", "Sunshine", "Namaste", "", "Hello", "Bangalore" ]
 
 let bWords = strings.filter({ string in
 	return false // change this!
 })
 
-printResult(expected: ["Bier", "Burger", "Bayern"], actual: bWords)
+printResult(expected: ["Beach", "Bangalore"], actual: bWords)
 
 //:### Task 3:
-//: Use reduce to return true when all items in the array are 0, and false otherwise.
+//: Use reduce to return **true** when all items in the array are 0, and false otherwise.
 
-let booleanAND: ((Bool, Int) -> Bool) = { previous, int in
+let booleanAND: ((Bool, Int) -> Bool) = { (previous: Bool, int: Int) in
 	return false // change this!
 }
 let firstResult = [0, 0, 0, 0].reduce(true, booleanAND)
