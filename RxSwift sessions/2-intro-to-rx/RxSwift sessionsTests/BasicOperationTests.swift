@@ -4,135 +4,101 @@ import RxSwift
 
 class BasicOperationTests: XCTestCase {
 
-    func testMap() {
+    func testMappingIntsByDoublingThem() {
         var results: [Int] = []
         let observableExpectation = expectation(description: "Didn't complete the Observable")
 
         _ = Observable.of(1, 2, 3)
-            .map(double)
-            .subscribe(
-                onNext: { int in
-                    results.append(int)
-                },
-                onError: failOnError,
-                onCompleted: {
-                    observableExpectation.fulfill()
-                },
-                onDisposed: nil)
-
-        waitForExpectations(timeout: 0.1, handler: nil)
-        XCTAssertEqual([2, 4, 6], results)
-    }
-
-    func testFilter() {
-        var results: [Int] = []
-        let observableExpectation = expectation(description: "Didn't complete the Observable")
-
-        _ = Observable.of(1, 100, 3, 39, 40, -18)
-			.filter({ number in
-				return number < 40
+			.map({ int in
+				return 0 // change this
 			})
             .subscribe(
                 onNext: { int in
                     results.append(int)
                 },
                 onError: failOnError,
-                onCompleted: {
-                    observableExpectation.fulfill()
+                onCompleted: fulfill(observableExpectation))
+
+        waitForExpectations(timeout: 0.1, handler: nil)
+        XCTAssertEqual([2, 4, 6], results)
+    }
+
+    func testFilteringOutIntsOver40() {
+        var results: [Int] = []
+        let observableExpectation = expectation(description: "Didn't complete the Observable")
+
+        _ = Observable.of(1, 100, 3, 39, 40, -18)
+			.filter({ number in
+				return true // change this
+			})
+            .subscribe(
+                onNext: { int in
+                    results.append(int)
                 },
-                onDisposed: nil)
+                onError: failOnError,
+                onCompleted: fulfill(observableExpectation))
 
         waitForExpectations(timeout: 0.1, handler: nil)
         XCTAssertEqual([1, 3, 39, -18], results)
     }
 
-    func testFlatmap() {
+    func testFlatmappingCharactersFromStrings() {
         // THIS TEST WON'T EVER PASS! Can you figure out why?
         var results: [String] = []
         let observableExpectation = expectation(description: "Didn't complete the Observable")
 
         _ = Observable.of("Hello", "World")
 			.flatMap({ string in
-				return Observable.from(string.characters)
+				return Observable.empty() // change this
 			})
             .subscribe(
                 onNext: { (char: Character) in
                     results.append(String(char))
                 },
                 onError: failOnError,
-                onCompleted: {
-                    observableExpectation.fulfill()
-                },
-                onDisposed: nil)
+                onCompleted: fulfill(observableExpectation))
 
         waitForExpectations(timeout: 0.1, handler: nil)
         XCTAssertEqual(["H", "e", "l", "l", "o", "W", "o", "r", "l", "d"], results)
     }
 
-    func testFlatmapConcatenated() {
-        var results: [String] = []
-        let observableExpectation = expectation(description: "Didn't complete the Observable")
-
-        _ = Observable.of("Hello")
-			.flatMap({ string in
-				return Observable.from(string.characters)
-			})
-            .concat(Observable.of("World").flatMap(characters))
-            .subscribe(
-                onNext: { (char: Character) in
-                    results.append(String(char))
-                },
-                onError: failOnError,
-                onCompleted: {
-                    observableExpectation.fulfill()
-                },
-                onDisposed: nil)
-
-        waitForExpectations(timeout: 0.1, handler: nil)
-        XCTAssertEqual(["H", "e", "l", "l", "o", "W", "o", "r", "l", "d"], results)
-    }
-
-    func testSomethingMoreComplex() {
+    func testFilteringOutTheLengthsOfWordsUnderFourCharacters() {
         var results: [Int] = []
         let observableExpectation = expectation(description: "Didn't complete the observable")
 
         _ = Observable.of("Hello", "World", "Welcome", "To", "Rx!")
 			.map({ string in
-				return string.characters.count
+				return 0 // change this
 			})
 			.filter({ int in
-				return int > 3
+				return true // change this
 			})
             .subscribe(
                 onNext: { int in
                     results.append(int)
                 },
                 onError: failOnError,
-                onCompleted: {
-                    observableExpectation.fulfill()
-                },
-                onDisposed: nil)
+                onCompleted: fulfill(observableExpectation))
 
         waitForExpectations(timeout: 0.1, handler: nil)
         XCTAssertEqual([5, 5, 7], results)
     }
 
-    func testCombineLatest() {
+    func testCombiningTwoIntsByMultiplyingThemTogether() {
         var results: [Int] = []
         let observableExpectation = expectation(description: "Didn't complete the observable")
 
         let firstObservable = Observable.of(3)
         let secondObservable = Observable.of(2, 4, 6)
-        _ = Observable.combineLatest(firstObservable, secondObservable, resultSelector: multiply)
+		_ = Observable.combineLatest(firstObservable, secondObservable, resultSelector: { int1, int2 in
+				return 0 // change this
+			})
             .subscribe(
                 onNext: { int in
                     results.append(int)
                 },
                 onError: failOnError,
-                onCompleted: {
-                    observableExpectation.fulfill()
-                },
-                onDisposed: nil)
+                onCompleted: fulfill(observableExpectation))
 
         waitForExpectations(timeout: 0.1, handler: nil)
         XCTAssertEqual([6, 12, 18], results)
@@ -140,28 +106,12 @@ class BasicOperationTests: XCTestCase {
 
 }
 
-private func double(int: Int) -> Int {
-    return int * 2
-}
-
-private func characters(string: String) -> Observable<Character> {
-    return Observable.from(string.characters)
-}
-
 private func failOnError(error: Error) {
     XCTFail("Shouldn't result in onError", file: #file, line: #line)
 }
 
-private func asCharacterCounts(string: String) -> Int {
-    return string.characters.count
-}
-
-private func outIntsLess(than max: Int) -> ((Int) -> Bool) {
-    return { int in
-        return max > int
-    }
-}
-
-private func multiply(one: Int, two: Int) -> Int {
-    return one * two
+private func fulfill(_ expectation: XCTestExpectation) -> (() -> Void) {
+	return {
+		expectation.fulfill()
+	}
 }
